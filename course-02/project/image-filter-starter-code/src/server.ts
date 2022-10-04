@@ -36,20 +36,20 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
     try{
     let filesArr: string[] = [];
 
-    let img_url = req.query.img_url;
+    let image_url = req.query.image_url;
     
-    if (!img_url ) {
+    if (!image_url ) {
       return res.status(400).send("url is required !!!");
     }
 
     //Check if url is valid
-    const isValideUrl = isValidURL(img_url);
+    const isValideUrl = isValidURL(image_url);
 
     if (!isValideUrl) {
       return res.status(400).send("url is not valid !!!");
     }
 
-    const filteredImg = await filterImageFromURL(img_url);
+    const filteredImg = await filterImageFromURL(image_url);
 
     if (filteredImg === undefined || filteredImg === null) {
       return res.status(422).send(`Unable to filter image`);
