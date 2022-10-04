@@ -32,7 +32,7 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
   //! END @TODO1
 
   // filter image endpoint
-  app.get("/filteredimage", async (req, res) => {
+    app.get( "/filteredimage", async (req:express.Request, res:express.Response) => {
     try{
     let filesArr: string[] = [];
 
